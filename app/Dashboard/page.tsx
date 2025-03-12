@@ -8,7 +8,6 @@ type Props = {};
 const Dashboard = (props: Props) => {
   return (
     <div className='dashboard-container'>
-      {" "}
       <h1 className="dashboard-title">Admin Dashboard</h1>
       <CreateButton />
       <InterviewTable data={mockInterviews} />
