@@ -1,36 +1,71 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Admin Dashboard UI
 
-First, run the development server:
+This project is a simple Admin Dashboard interface built with **Next.js**, **ShadCN UI components**, **Tailwind CSS**, and **external CSS**. It includes a page that lists mock interview data and a button to create a new interview (non-functional for now).
+
+---
+
+## 🛠️ Tech Stack
+
+- [Next.js 14+](https://nextjs.org/)
+- [ShadCN UI](https://ui.shadcn.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- External CSS Modules (for extra styling)
+- TypeScript
+
+## 📦 Installation
+
+1. **Clone the repo:**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-username/admin-dashboard-ui.git
+cd admin-dashboard-ui
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- npm run dev
 
-## Learn More
+3. **ShadCN Setup:**
 
-To learn more about Next.js, take a look at the following resources:
+**If not already set up**
+```bash
+npx shadcn-ui@latest init
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ **Required components**
+```bash
+npx shadcn-ui@latest add button
+npx shadcn-ui@latest add card
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Project Structure
 
-## Deploy on Vercel
+/app
+  /dashboard
+    page.tsx              # Dashboard UI page
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+/components
+  InterviewTable.tsx      # Table displaying interview data
+  CreateButton.tsx        # Button for creating a new interview
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+/components/ui
+  button.tsx              # ShadCN Button component
+  card.tsx                # ShadCN Card component
+
+/constants(data)
+  index.ts       # Mock interview data
+
+/types
+  index.ts          # Interview type definition
+
+
+#### Features
+- Interview List (Title, Status, Date Created)
+- Create Interview button (UI only)
+- Responsive and styled with Tailwind + ShadCN
+- Modular file structure with reusable components
+- TypeScript with separated types and data
